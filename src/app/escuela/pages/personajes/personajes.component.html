@@ -1,0 +1,25 @@
+<div class="animate__animated animate__fadeIn">
+
+    <h2>Personajes por casa de hechicería: </h2>
+    <hr>
+    
+    <form [formGroup]="miFormulario">
+    
+        <div class="row">
+            <div class="col">
+                <select class="form-control"
+                        formControlName="casa">
+                    <option value="">-- Seleccione una casa --</option>
+                    <option *ngFor="let item of casa; let i=index"
+                            [value]="item | lowercase">
+                            {{item}}
+                    </option>
+                </select>
+            </div>
+        </div>
+    </form>
+    <hr>
+    <app-escuela-tabla [array]="personajes"></app-escuela-tabla>
+</div>
+
+

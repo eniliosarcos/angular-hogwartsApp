@@ -1,0 +1,12 @@
+<div class="animate__animated animate__fadeIn">
+
+    <h2>Estudiantes</h2>
+    <hr>
+    <button
+        class="btn btn-primary mb-2" 
+        routerLink="/nuevo-estudiante">
+        <i class="fa fa-folder"></i> 
+        Nuevo estudiante
+    </button>
+    <app-escuela-tabla [array]="estudiantes"></app-escuela-tabla>
+</div>
