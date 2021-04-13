@@ -9,6 +9,4 @@ Ejecutar el comando `npm install` en el root de la aplicacion para instalar los 
 
 ## Modo desarrollo
 
-Ejecuta `ng serve` para correr el servidor de desarrollo y navega a la direccion `http://localhost:4200/` para verificar la aplicacion
-
-
+Ejecuta `ng serve` en el root de la aplicacion para correr el servidor de desarrollo y navega a la direccion `http://localhost:4200/` para verificar la aplicacion
