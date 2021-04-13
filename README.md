@@ -4,11 +4,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## INSTALAR PAQUETES
 
-Ejecutar el comando `npm install` en el root de la aplicacion paraa instalar los paquetes necesarios.
+Ejecutar el comando `npm install` en el root de la aplicacion para instalar los paquetes necesarios.
 
 
-## Development server
+## Modo desarrollo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Ejecuta `ng serve` para correr el servidor de desarrollo y navega a la direccion `http://localhost:4200/` para verificar la aplicacion
 
 
