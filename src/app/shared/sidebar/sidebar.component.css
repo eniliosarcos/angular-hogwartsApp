@@ -1,3 +1,16 @@
 li {
     cursor: pointer;
 }
+
+.list-group-mine .list-group-item {
+    background-color: #30373e;
+    color: white;
+}
+
+.active{
+    background-color: rgb(0, 81, 255) !important;
+}
+  
+.list-group-mine .list-group-item:hover {
+    background-color: rgb(0, 81, 255);
+}

@@ -1,0 +1,9 @@
+.clearfix {
+    text-align: center;
+    font-size: 14px;
+    color: aliceblue;
+}
+
+.my-pagination::ng-deep .ngx-pagination a:hover {
+    background-color: #2199e8;
+}

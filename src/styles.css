@@ -1,5 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
-
+body{
+    background-color: rgb(34, 38, 42,1);
+}
+h2{
+    color: aliceblue;
+}
+label{
+    color: rgb(255, 255, 255);
+}
 .small-flag{
     width: 100px;
 }
