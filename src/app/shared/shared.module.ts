@@ -7,13 +7,15 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 //modulo que maneja solo el sidebar de la aplicacion
 
 @NgModule({
-  declarations: [SidebarComponent],
-  exports: [
+  declarations: [
     SidebarComponent
   ],
   imports: [
     CommonModule,
     RouterModule
+  ],
+  exports: [
+    SidebarComponent
   ]
 })
 export class SharedModule { }
