@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Subject } from 'rxjs';
 import { Personajes } from '../../interfaces/hogwars.interface';
+import { NotificationsService } from '../../services/notifications.service';
 import { UploadImageCloudinaryService } from '../../services/upload-image-cloudinary.service';
 
 @Component({
@@ -25,7 +25,9 @@ export class NuevoEstudianteComponent implements OnInit {
   subject: string = '';
 
   //si existe informacion localmente, la extrae y la guarda en el arreglo para visualizarla
-  constructor(private fb: FormBuilder, private uploadCloudinary: UploadImageCloudinaryService) { 
+  constructor(private fb: FormBuilder,
+              private uploadCloudinary: UploadImageCloudinaryService,
+              private notificationsService:NotificationsService){ 
 
       this.nuevosEstudiantes = JSON.parse(localStorage.getItem('nuevos-estudiante')!) || [];
   }
@@ -80,6 +82,7 @@ export class NuevoEstudianteComponent implements OnInit {
     localStorage.setItem('nuevos-estudiante', JSON.stringify(this.nuevosEstudiantes));
 
     //reinicia el formulario luego del guardado
+    this.notificationsService.showSuccess('El nuevo estudiante fue agregado a la lista','Exito!');
     this.miFormulario.reset();
     this.files=[];
   }
