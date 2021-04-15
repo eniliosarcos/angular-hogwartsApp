@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {switchMap, tap} from 'rxjs/operators'
+import { switchMap, tap } from 'rxjs/operators'
 import { EscuelaHogwartsService } from '../../services/escuela-hogwarts.service';
 import { Personajes } from '../../interfaces/hogwars.interface';
 
@@ -22,6 +22,7 @@ export class PersonajesComponent implements OnInit {
 
   //declaracion del arreglo para visualizarlo en la tabla
   personajes: Personajes[] = [];
+  cargarTabla: boolean = false;
 
   //declaracion del formbuilder y el servicio que consume la API
   constructor(private fb: FormBuilder,
@@ -40,13 +41,19 @@ export class PersonajesComponent implements OnInit {
       //reinicia el arreglo cada vez que hay un cambio
       tap((_) => {
         this.personajes = [];
+        this.cargarTabla = false;
       }),
       //extrae la informacion de los personajes
       switchMap( casa => this.escuelaService.personajes(casa)),
     )
     // la informacion extraida es guardada en el arreglo para visualizarla en la tabla
     .subscribe( personajes => {
-      this.personajes = personajes!;
+
+      if(personajes != null){
+
+        this.personajes = personajes!;
+        this.cargarTabla = true;
+      } 
     });
   }
 

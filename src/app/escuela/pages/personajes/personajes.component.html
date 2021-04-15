@@ -19,7 +19,7 @@
         </div>
     </form>
     <hr>
-    <app-escuela-tabla [array]="personajes"></app-escuela-tabla>
+    <app-escuela-tabla [array]="personajes" *ngIf="personajes.length>0"></app-escuela-tabla>
 </div>
 
 

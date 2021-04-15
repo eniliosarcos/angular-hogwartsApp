@@ -9,7 +9,6 @@ import { EscuelaHogwartsService } from '../../services/escuela-hogwarts.service'
 })
 export class EstudiantesComponent implements OnInit {
 
-  
   //arreglo definido para su visualizacion en la tabla
   estudiantes: Personajes[] = [];
 
