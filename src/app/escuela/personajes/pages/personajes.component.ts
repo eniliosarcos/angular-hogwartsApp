@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { switchMap, tap } from 'rxjs/operators'
-import { EscuelaHogwartsService } from '../../main/services/escuela-hogwarts.service';
 import { Personajes } from '../../main/interfaces/hogwars.interface';
+import { PersonajesService } from '../services/personajes.service';
 
 
 @Component({
@@ -27,7 +27,7 @@ export class PersonajesComponent implements OnInit {
 
   //declaracion del formbuilder y el servicio que consume la API
   constructor(private fb: FormBuilder,
-              private escuelaService: EscuelaHogwartsService) { }
+              private personajesService: PersonajesService) { }
 
   ngOnInit(): void {
 
@@ -49,7 +49,7 @@ export class PersonajesComponent implements OnInit {
         }
       }),
       //extrae la informacion de los personajes
-      switchMap( casa => this.escuelaService.personajes(casa)),
+      switchMap( casa => this.personajesService.getPersonajes(casa)),
     )
     // la informacion extraida es guardada en el arreglo para visualizarla en la tabla
     .subscribe( personajes => {

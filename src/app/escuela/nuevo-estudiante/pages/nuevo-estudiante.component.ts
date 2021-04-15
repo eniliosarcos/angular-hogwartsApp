@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Personajes } from '../../main/interfaces/hogwars.interface';
-import { NotificationsService } from '../../main/services/notifications.service';
-import { UploadImageCloudinaryService } from '../../main/services/upload-image-cloudinary.service';
+import { NotificationsService } from '../services/notifications.service';
+import { NuevoEstudianteService } from '../services/nuevo-estudiante.service';
 
 @Component({
   selector: 'app-nuevo-estudiante',
@@ -26,7 +26,7 @@ export class NuevoEstudianteComponent implements OnInit {
 
   //si existe informacion localmente, la extrae y la guarda en el arreglo para visualizarla
   constructor(private fb: FormBuilder,
-              private uploadCloudinary: UploadImageCloudinaryService,
+              private nuevoEstudianteService: NuevoEstudianteService,
               private notificationsService:NotificationsService){ 
 
       this.nuevosEstudiantes = JSON.parse(localStorage.getItem('nuevos-estudiante')!) || [];
@@ -61,7 +61,7 @@ export class NuevoEstudianteComponent implements OnInit {
       data.append('file',file_data);
       data.append('upload_preset','rxsytvq6');
       data.append('cloud_name', 'ejspdev');
-      response = await this.uploadCloudinary.upload(data).toPromise();
+      response = await this.nuevoEstudianteService.upload(data).toPromise();
     }
     
     //si el formulario es invalido, marca todos los campos como tocados para lanzar los mensajes de error

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EscuelaHogwartsService } from '../../main/services/escuela-hogwarts.service';
 import { Personajes } from '../../main/interfaces/hogwars.interface';
+import { ProfesoresService } from '../services/profesores.service';
 
 @Component({
   selector: 'app-profesores',
@@ -14,7 +14,7 @@ export class ProfesoresComponent implements OnInit {
   cargarTabla: boolean = false;
   loading: boolean = true;
 
-  constructor(private escuelaService: EscuelaHogwartsService) {}
+  constructor(private profesoresService: ProfesoresService) {}
 
   ngOnInit(): void {
 
@@ -24,7 +24,7 @@ export class ProfesoresComponent implements OnInit {
   //metodo para extraer la informacion de los profesores de la escuela 
   cargarProfesores(){
 
-    this.escuelaService.profesores()
+    this.profesoresService.getProfesores()
     .subscribe(resp => {
       this.cargarTabla = true;
       this.loading = false;
