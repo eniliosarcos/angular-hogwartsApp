@@ -23,6 +23,7 @@ export class NuevoEstudianteComponent implements OnInit {
   //arreglo de los estudiantes a visualizar en la tabla
   nuevosEstudiantes: Personajes[] = [];
   subject: string = '';
+  loadingButton: boolean = false;
 
   //si existe informacion localmente, la extrae y la guarda en el arreglo para visualizarla
   constructor(private fb: FormBuilder,
@@ -53,6 +54,8 @@ export class NuevoEstudianteComponent implements OnInit {
   async guardar(){
     
     let response;
+    this.loadingButton = true;
+    
 
     if(this.files[0]){
 
@@ -82,6 +85,7 @@ export class NuevoEstudianteComponent implements OnInit {
     localStorage.setItem('nuevos-estudiante', JSON.stringify(this.nuevosEstudiantes));
 
     //reinicia el formulario luego del guardado
+    this.loadingButton = false;
     this.notificationsService.showSuccess('El nuevo estudiante fue agregado a la lista','Exito!');
     this.miFormulario.reset();
     this.files=[];

@@ -57,10 +57,12 @@
     
                 <div class="row">
                     <div class="col">
-                        <button [disabled]="miFormulario.invalid"
+                        <button [disabled]="miFormulario.invalid || loadingButton"
                                 type="submit"
                                 class="btn btn-primary float-end mb-2">
-                            Agregar
+                                <span class="spinner-border spinner-border-sm" *ngIf="loadingButton"></span>
+                                <span *ngIf="loadingButton" style="margin-left: 5px;">Espere..</span> 
+                                <span *ngIf="!loadingButton">Agregar</span> 
                         </button>
                     </div>
                 </div>
