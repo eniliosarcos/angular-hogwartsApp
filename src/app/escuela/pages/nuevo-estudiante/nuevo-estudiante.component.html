@@ -47,7 +47,7 @@
                     <label class="col-sm-3 col-form-label">Imagen</label>
                     <div class="col-sm-9">
 
-                        <div class="custom-dropzone" ngx-dropzone (change)="onSelect($event)" [multiple]="false">
+                        <div class="custom-dropzone" ngx-dropzone (change)="onSelect($event)" [multiple]="false" accept="'image/png,image/jpeg,image/jpg'">
                             <ngx-dropzone-label>Haz click o suelta una imagen aqui</ngx-dropzone-label>
                             <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
                             </ngx-dropzone-image-preview>
