@@ -7,3 +7,7 @@
 .my-pagination::ng-deep .ngx-pagination a:hover {
     background-color: #2199e8;
 }
+
+td {
+    vertical-align: middle;
+}

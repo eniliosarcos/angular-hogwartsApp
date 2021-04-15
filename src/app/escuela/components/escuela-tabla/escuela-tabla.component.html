@@ -9,7 +9,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of array | paginate: { itemsPerPage: 4, currentPage: p } let i=index " class="animate__animated animate__fadeIn">
+            <tr *ngFor="let item of array | paginate: { itemsPerPage: 5, currentPage: p } let i=index " class="animate__animated animate__fadeIn">
                 <td>{{item.name}}</td>
                 <td>{{item.patronus || "N/A"}}</td>
                 <td>{{item.yearOfBirth | age}}</td>
