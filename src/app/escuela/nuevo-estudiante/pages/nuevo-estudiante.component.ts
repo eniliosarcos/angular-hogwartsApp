@@ -30,7 +30,7 @@ export class NuevoEstudianteComponent implements OnInit {
               private nuevoEstudianteService: NuevoEstudianteService,
               private notificationsService:NotificationsService){ 
 
-      this.nuevosEstudiantes = JSON.parse(localStorage.getItem('nuevos-estudiante')!) || [];
+      this.nuevosEstudiantes = JSON.parse(localStorage.getItem('nuevos-estudiantes')!) || [];
   }
 
   ngOnInit(): void {
@@ -82,7 +82,7 @@ export class NuevoEstudianteComponent implements OnInit {
     })
 
     //guarda los datos localmente
-    localStorage.setItem('nuevos-estudiante', JSON.stringify(this.nuevosEstudiantes));
+    localStorage.setItem('nuevos-estudiantes', JSON.stringify(this.nuevosEstudiantes));
 
     //reinicia el formulario luego del guardado
     this.loadingButton = false;
