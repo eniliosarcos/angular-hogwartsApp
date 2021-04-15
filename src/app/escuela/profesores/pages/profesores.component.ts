@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EscuelaHogwartsService } from '../../services/escuela-hogwarts.service';
-import { Personajes } from '../../interfaces/hogwars.interface';
-import { tap } from 'rxjs/operators';
+import { EscuelaHogwartsService } from '../../main/services/escuela-hogwarts.service';
+import { Personajes } from '../../main/interfaces/hogwars.interface';
 
 @Component({
   selector: 'app-profesores',

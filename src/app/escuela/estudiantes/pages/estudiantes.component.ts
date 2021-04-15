@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Personajes } from '../../interfaces/hogwars.interface';
-import { EscuelaHogwartsService } from '../../services/escuela-hogwarts.service';
+import { Personajes } from '../../main/interfaces/hogwars.interface';
+import { EscuelaHogwartsService } from '../../main/services/escuela-hogwarts.service';
 import { debounceTime, tap } from 'rxjs/operators';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem } from '../../escuela/interfaces/menuItem.interface';
+import { MenuItem } from '../../escuela/main/interfaces/menuItem.interface';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,15 +11,15 @@ export class SidebarComponent implements OnInit {
   templateMenu: MenuItem[] = [
     {
       texto: 'Personajes',
-      ruta: './escuela/personajes'
+      ruta: './page/personajes'
     },
     {
       texto: 'Estudiantes',
-      ruta: './escuela/estudiantes'
+      ruta: './page/estudiantes'
     },
     {
       texto: 'Profesores',
-      ruta: './escuela/profesores'
+      ruta: './page/profesores'
     },
   ]
 

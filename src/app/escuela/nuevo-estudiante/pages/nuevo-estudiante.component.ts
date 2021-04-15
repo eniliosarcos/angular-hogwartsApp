@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Personajes } from '../../interfaces/hogwars.interface';
-import { NotificationsService } from '../../services/notifications.service';
-import { UploadImageCloudinaryService } from '../../services/upload-image-cloudinary.service';
+import { Personajes } from '../../main/interfaces/hogwars.interface';
+import { NotificationsService } from '../../main/services/notifications.service';
+import { UploadImageCloudinaryService } from '../../main/services/upload-image-cloudinary.service';
 
 @Component({
   selector: 'app-nuevo-estudiante',
