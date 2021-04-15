@@ -46,18 +46,19 @@
                 <div class="mb-2 row">
                     <label class="col-sm-3 col-form-label">Imagen</label>
                     <div class="col-sm-9">
-    
-                        <input type="text"
-                                class="form-control"
-                                formControlName="image"
-                                placeholder="coloca una direccion http de la imagen del estudiante">
+
+                        <div class="custom-dropzone" ngx-dropzone (change)="onSelect($event)" [multiple]="false">
+                            <ngx-dropzone-label>Haz click o suelta una imagen aqui</ngx-dropzone-label>
+                            <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                            </ngx-dropzone-image-preview>
+                        </div>
                     </div>
                 </div>
     
                 <div class="row">
                     <div class="col">
                         <button type="submit"
-                                class="btn btn-primary float-end">
+                                class="btn btn-primary float-end mb-2">
                             Agregar
                         </button>
                     </div>
