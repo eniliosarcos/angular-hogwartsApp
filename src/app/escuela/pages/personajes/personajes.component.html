@@ -19,6 +19,7 @@
         </div>
     </form>
     <hr>
+    <app-loading *ngIf="loading"></app-loading>
     <app-escuela-tabla [array]="personajes" *ngIf="personajes.length>0"></app-escuela-tabla>
 </div>
 

@@ -9,7 +9,7 @@ import { Personajes } from '../interfaces/hogwars.interface';
 export class EscuelaHogwartsService {
 
   //URL base de la api a consumir
-  private apiUrl: string = 'http://hp-api.herokuapp.com/api/characters'
+  private apiUrl: string = 'http://hp-api.herokuapp.com/api/characters';
 
   //declaracion del modulo http para el consumo de la api
   constructor(private http: HttpClient) { }

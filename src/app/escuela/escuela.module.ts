@@ -16,6 +16,7 @@ import { EscuelaTablaComponent } from './components/escuela-tabla/escuela-tabla.
 
 import { AgePipe } from './pipes/age.pipe';
 import { RouterModule } from '@angular/router';
+import { LoadingComponent } from './components/loading/loading.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { RouterModule } from '@angular/router';
     PersonajesComponent,
     ProfesoresComponent,
     EscuelaTablaComponent,
-    AgePipe
+    LoadingComponent,
+    AgePipe,
   ],
   imports: [
     CommonModule,

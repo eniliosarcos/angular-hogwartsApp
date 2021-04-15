@@ -8,5 +8,6 @@
         <i class="fa fa-folder"></i> 
         Nuevo estudiante
     </button>
-    <app-escuela-tabla [array]="estudiantes"></app-escuela-tabla>
+    <app-loading *ngIf="loading"></app-loading>
+    <app-escuela-tabla [array]="estudiantes" *ngIf="estudiantes.length>0"></app-escuela-tabla>
 </div>

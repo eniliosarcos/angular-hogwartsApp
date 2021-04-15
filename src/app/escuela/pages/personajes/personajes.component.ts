@@ -23,6 +23,7 @@ export class PersonajesComponent implements OnInit {
   //declaracion del arreglo para visualizarlo en la tabla
   personajes: Personajes[] = [];
   cargarTabla: boolean = false;
+  loading: boolean = false;
 
   //declaracion del formbuilder y el servicio que consume la API
   constructor(private fb: FormBuilder,
@@ -39,9 +40,13 @@ export class PersonajesComponent implements OnInit {
     this.miFormulario.get('casa')?.valueChanges
     .pipe(
       //reinicia el arreglo cada vez que hay un cambio
-      tap((_) => {
+      tap((resp) => {
         this.personajes = [];
         this.cargarTabla = false;
+        this.loading = false;
+        if(resp){
+          this.loading = true;
+        }
       }),
       //extrae la informacion de los personajes
       switchMap( casa => this.escuelaService.personajes(casa)),
@@ -51,10 +56,10 @@ export class PersonajesComponent implements OnInit {
 
       if(personajes != null){
 
+        this.loading = false;
         this.personajes = personajes!;
         this.cargarTabla = true;
       } 
     });
   }
-
 }
